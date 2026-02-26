@@ -34,6 +34,17 @@ body:
         - Linux Arm64
     validations:
       required: true
+  - type: dropdown
+    id: assetripper_edition
+    attributes:
+      label: Which edition are you using?
+      description: Please select your edition of AssetRipper.
+      options:
+        - Unselected
+        - Free
+        - Premium
+    validations:
+      required: true
   - type: textarea
     id: game_name
     attributes:

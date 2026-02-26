@@ -23,7 +23,7 @@ Pre-releases showcase experimental features and are available in the [releases s
 
 ## Nightly Builds [![Build Status](https://img.shields.io/github/workflow/status/AssetRipper/AssetRipper/Publish/master?label=Build%20Status&style=flat-square)](https://nightly.link/AssetRipper/AssetRipper/workflows/publish/master)
 
-For advanced users, every commit triggers an automatic nightly build via Github Actions:
+For advanced users, every commit triggers an automatic "nightly" build via Github Actions:
 
 | Platform      | Download Link                                                                                               |
 |---------------|-------------------------------------------------------------------------------------------------------------|
@@ -34,7 +34,7 @@ For advanced users, every commit triggers an automatic nightly build via Github 
 | Linux x64     | [Download](https://nightly.link/AssetRipper/AssetRipper/workflows/publish/master/AssetRipper_linux_x64.zip) |
 | Linux Arm64     | [Download](https://nightly.link/AssetRipper/AssetRipper/workflows/publish/master/AssetRipper_linux_arm64.zip) |
 
-⚠️ Alpha builds are highly experimental and may contain bugs or unfinished features.
+⚠️ Nightly builds are highly experimental and may contain bugs or unfinished features.
 
 ---
 

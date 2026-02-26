@@ -1,7 +1,7 @@
 name: New feature or enhancement
 description: Suggest or discuss a feature or enhancement for AssetRipper
 title: "[Enhancement]: "
-labels: [enhancement]
+labels: []
 body:
   - type: markdown
     attributes:

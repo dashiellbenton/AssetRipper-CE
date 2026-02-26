@@ -19,7 +19,7 @@ This guide will help you run AssetRipper on macOS. Before proceeding, ensure you
 
    ![Extract AssetRipper](images/RunningOnMac/002.png)
 
-2. You should now see a folder named `AssetRipper_mac_x64`.
+2. You should now see a folder named `AssetRipper_mac_arm64`.
 
    ![AssetRipper folder](images/RunningOnMac/003.png)
 
@@ -30,7 +30,7 @@ This guide will help you run AssetRipper on macOS. Before proceeding, ensure you
 
 ### Step 3: Open Terminal in the AssetRipper Folder
 
-1. Select the `AssetRipper_mac_x64` folder.
+1. Select the `AssetRipper_mac_arm64` folder.
 2. Go to `Finder` > `Services` > `New Terminal at Folder`.
 
    ![Open Terminal](images/RunningOnMac/006.png)
@@ -86,7 +86,7 @@ After completing these steps, the AssetRipper GUI should open:
 
 Once you've gone through the initial setup, you can easily reopen AssetRipper:
 
-1. Navigate to the `AssetRipper_mac_x64` folder.
+1. Navigate to the `AssetRipper_mac_arm64` folder.
 2. Double-click the `AssetRipper.GUI.Free` file to launch the application.
 
 ![Reopen AssetRipper](images/RunningOnMac/018.png)

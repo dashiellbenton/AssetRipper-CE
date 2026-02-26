@@ -1,7 +1,7 @@
 name: Other
 description: Something else?
 title: "[Other]: "
-labels: [Other]
+labels: []
 body:
   - type: textarea
     id: description

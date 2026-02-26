@@ -19,9 +19,6 @@
   - Scene preview
   - Material preview
 
-### 1.4 Remove Native Dependencies
-- Replace crunch with managed code
-
 ---
 
 ## 2. Concept Ideas
@@ -48,7 +45,6 @@
 - **Console**
   - Enterable commands
 - **Search Functionality**
-  - Dedicated search window
   - Tree View Search (Filters, Name filter, Rows limit, Result count, Group resources option)
 - **Tabs**
   - Inspector Tab (Tag, Layer, ID, File name, Asset Specific Properties)
