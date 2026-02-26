@@ -83,14 +83,14 @@ internal static class ZipExtractor
 	{
 		Logger.Info(LogCategory.Import, $"Decompressing files...{Environment.NewLine}\tFrom: {zipFilePath}{Environment.NewLine}\tTo: {outputDirectory}");
 		using Stream stream = fileSystem.File.OpenRead(zipFilePath);
-		using ZipArchive archive = ZipArchive.Open(stream);
-		foreach (ZipArchiveEntry entry in archive.Entries)
+		using IArchive archive = ZipArchive.OpenArchive(stream);
+		foreach (IArchiveEntry entry in archive.Entries)
 		{
 			WriteEntryToDirectory(entry, outputDirectory, fileSystem);
 		}
 	}
 
-	private static void WriteEntryToDirectory(ZipArchiveEntry entry, string outputDirectory, FileSystem fileSystem)
+	private static void WriteEntryToDirectory(IArchiveEntry entry, string outputDirectory, FileSystem fileSystem)
 	{
 		string filePath;
 		string fullOutputDirectory = fileSystem.Path.GetFullPath(outputDirectory);

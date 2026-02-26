@@ -1,5 +1,6 @@
 ﻿using SharpCompress.Archives;
 using SharpCompress.Archives.Zip;
+using SharpCompress.Writers.Zip;
 using System.Diagnostics;
 using System.Net.Http;
 
@@ -56,8 +57,8 @@ internal static class Program
 
 	private static byte[] DecompressZipFile(Stream inputStream)
 	{
-		using ZipArchive archive = ZipArchive.Open(inputStream);
-		ZipArchiveEntry entry = archive.Entries.Where(entry => !entry.IsDirectory).Single();
+		using IWritableArchive<ZipWriterOptions> archive = ZipArchive.OpenArchive(inputStream);
+		IArchiveEntry entry = archive.Entries.Where(entry => !entry.IsDirectory).Single();
 		using MemoryStream outputStream = new();
 		entry.WriteTo(outputStream);
 		return outputStream.ToArray();

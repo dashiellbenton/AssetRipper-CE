@@ -63,7 +63,7 @@ public static class LzmaCompression
 
 	private static void DecompressLzmaStream(byte[] properties, Stream compressedStream, long headlessSize, Stream decompressedStream, long decompressedSize)
 	{
-		LzmaStream lzmaStream = new LzmaStream(properties, compressedStream, headlessSize, -1, null, false);
+		LzmaStream lzmaStream = LzmaStream.Create(properties, compressedStream, headlessSize, -1, presetDictionary: null, isLzma2: false);
 
 		byte[] buffer = ArrayPool<byte>.Shared.Rent(1024);
 		long totalRead = 0;
@@ -94,7 +94,7 @@ public static class LzmaCompression
 	public static long CompressLzmaStream(Stream uncompressedStream, long uncompressedSize, Stream compressedStream)
 	{
 		long basePosition = compressedStream.Position;
-		LzmaStream lzmaStream = new LzmaStream(new(), false, compressedStream);
+		LzmaStream lzmaStream = LzmaStream.Create(new LzmaEncoderProperties(), isLzma2: false, compressedStream);
 		compressedStream.Write(lzmaStream.Properties);
 		CopyToLzma(uncompressedStream, lzmaStream, uncompressedSize);
 		lzmaStream.Close();
@@ -114,7 +114,7 @@ public static class LzmaCompression
 	public static long CompressLzmaSizeStream(Stream uncompressedStream, long uncompressedSize, Stream compressedStream)
 	{
 		long basePosition = compressedStream.Position;
-		LzmaStream lzmaStream = new LzmaStream(new(), false, compressedStream);
+		LzmaStream lzmaStream = LzmaStream.Create(new LzmaEncoderProperties(), isLzma2: false, compressedStream);
 		compressedStream.Write(lzmaStream.Properties);
 		new BinaryWriter(compressedStream).Write(uncompressedSize);
 		CopyToLzma(uncompressedStream, lzmaStream, uncompressedSize);
