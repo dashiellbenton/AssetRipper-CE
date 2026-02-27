@@ -47,6 +47,9 @@ public static class Pass002_RenameSubnodes
 		{ "Float4" , Vector4FloatName },
 		{ "Fixed_bitset" , "FixedBitset" },
 		{ "GradientNEW" , "Gradient" },
+		{ "ProgramParameters" , "SerializedProgramParameters" },
+		{ "BufferBinding" , "BufferBindingParameter" },
+		{ "ConstantBufferParameter" , "ConstantBuffer" },
 	};
 
 	private static IEnumerable<T> WhereNotNull<T>(this IEnumerable<T?> enumerable) where T : notnull
