@@ -32,9 +32,6 @@ public abstract partial class PlatformGameStructure
 	/// <summary>AssemblyName : AssemblyPath</summary>
 	public Dictionary<string, string> Assemblies { get; } = [];
 
-	protected static readonly Regex s_levelTemplate = LevelTemplateRegex();
-	protected static readonly Regex s_sharedAssetTemplate = SharedAssetTemplateRegex();
-
 	protected const string DataFolderName = "Data";
 	protected const string ManagedName = "Managed";
 	protected const string LibName = "lib";
@@ -81,8 +78,8 @@ public abstract partial class PlatformGameStructure
 			fileName == GlobalGameManagersName ||
 			fileName == GlobalGameManagerAssetsName ||
 			fileName == ResourcesAssetsName ||
-			s_levelTemplate.IsMatch(fileName) ||
-			s_sharedAssetTemplate.IsMatch(fileName))
+			LevelTemplateRegex.IsMatch(fileName) ||
+			SharedAssetTemplateRegex.IsMatch(fileName))
 		{
 			return true;
 		}
@@ -213,7 +210,7 @@ public abstract partial class PlatformGameStructure
 		foreach (string levelFile in FileSystem.Directory.EnumerateFiles(root))
 		{
 			string name = FileSystem.Path.GetFileName(levelFile);
-			if (s_levelTemplate.IsMatch(name))
+			if (LevelTemplateRegex.IsMatch(name))
 			{
 				string levelName = MultiFileStream.GetFileName(name);
 				AddFile(files, levelName, levelFile);
@@ -383,8 +380,8 @@ public abstract partial class PlatformGameStructure
 	}
 
 	[GeneratedRegex("^level(0|[1-9][0-9]*)(\\.split0)?$", RegexOptions.Compiled)]
-	private static partial Regex LevelTemplateRegex();
+	private static partial Regex LevelTemplateRegex { get; }
 
 	[GeneratedRegex("^sharedassets[0-9]+\\.assets", RegexOptions.Compiled)]
-	private static partial Regex SharedAssetTemplateRegex();
+	private static partial Regex SharedAssetTemplateRegex { get; }
 }
