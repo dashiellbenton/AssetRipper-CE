@@ -1,4 +1,4 @@
-﻿using AssetRipper.Import.Configuration;
+﻿using AssetRipper.Configuration;
 using AssetRipper.NativeDialogs;
 using AssetRipper.SourceGenerated.Extensions;
 using Microsoft.AspNetCore.Http;

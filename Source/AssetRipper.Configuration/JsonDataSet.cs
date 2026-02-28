@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization.Metadata;
 
-namespace AssetRipper.Import.Configuration;
+namespace AssetRipper.Configuration;
 
 public sealed class JsonDataSet<T> : DataSet<T> where T : new()
 {

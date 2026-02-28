@@ -1,5 +1,5 @@
-﻿using AssetRipper.GUI.Web.Paths;
-using AssetRipper.Import.Configuration;
+﻿using AssetRipper.Configuration;
+using AssetRipper.GUI.Web.Paths;
 
 namespace AssetRipper.GUI.Web.Pages.Settings;
 

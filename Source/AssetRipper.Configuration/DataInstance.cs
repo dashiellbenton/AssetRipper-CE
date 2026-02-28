@@ -1,4 +1,4 @@
-﻿namespace AssetRipper.Import.Configuration;
+﻿namespace AssetRipper.Configuration;
 
 public abstract class DataInstance : DataEntry
 {

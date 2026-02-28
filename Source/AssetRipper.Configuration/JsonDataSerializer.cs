@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization.Metadata;
 
-namespace AssetRipper.Import.Configuration;
+namespace AssetRipper.Configuration;
 
 public sealed class JsonDataSerializer<T> : DataSerializer<T> where T : new()
 {

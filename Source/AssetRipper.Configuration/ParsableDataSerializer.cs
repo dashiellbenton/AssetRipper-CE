@@ -1,4 +1,4 @@
-﻿namespace AssetRipper.Import.Configuration;
+﻿namespace AssetRipper.Configuration;
 
 public sealed class ParsableDataSerializer<T> : DataSerializer<T> where T : IParsable<T>, new()
 {

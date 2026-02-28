@@ -1,4 +1,4 @@
-﻿using AssetRipper.Import.Configuration;
+﻿using AssetRipper.Configuration;
 
 namespace AssetRipper.GUI.Web.Pages;
 

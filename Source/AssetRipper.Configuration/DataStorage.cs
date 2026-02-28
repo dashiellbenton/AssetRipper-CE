@@ -1,8 +1,8 @@
-﻿namespace AssetRipper.Import.Configuration;
+﻿namespace AssetRipper.Configuration;
 
 public class DataStorage<T> where T : DataEntry
 {
-	protected readonly Dictionary<string, T> data = new();
+	protected readonly Dictionary<string, T> data = [];
 
 	public IEnumerable<string> Keys => data.Keys;
 

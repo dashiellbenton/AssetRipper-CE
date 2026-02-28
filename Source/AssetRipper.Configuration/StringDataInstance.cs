@@ -1,4 +1,4 @@
-﻿namespace AssetRipper.Import.Configuration;
+﻿namespace AssetRipper.Configuration;
 
 public class StringDataInstance : DataInstance<string>
 {

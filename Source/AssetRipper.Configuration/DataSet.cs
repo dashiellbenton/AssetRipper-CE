@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace AssetRipper.Import.Configuration;
+namespace AssetRipper.Configuration;
 
 public abstract class DataSet : DataEntry, IEnumerable
 {
@@ -47,13 +47,13 @@ public abstract class DataSet : DataEntry, IEnumerable
 }
 public class DataSet<T> : DataSet, IReadOnlyList<T>
 {
-	private readonly List<T> list = new();
+	private readonly List<T> list;
 	private readonly DataSerializer<T> serializer;
 
 	public DataSet(DataSerializer<T> serializer)
 	{
 		this.serializer = serializer;
-		list = new();
+		list = [];
 	}
 
 	public DataSet(DataSerializer<T> serializer, List<T> list)

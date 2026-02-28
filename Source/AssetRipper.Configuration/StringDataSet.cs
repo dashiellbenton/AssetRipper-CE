@@ -1,4 +1,4 @@
-﻿namespace AssetRipper.Import.Configuration;
+﻿namespace AssetRipper.Configuration;
 
 public sealed class StringDataSet : DataSet<string>
 {
