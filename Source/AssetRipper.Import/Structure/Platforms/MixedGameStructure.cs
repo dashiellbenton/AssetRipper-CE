@@ -49,7 +49,7 @@ public sealed class MixedGameStructure : PlatformGameStructure
 	private void CollectFromDirectory(string root, List<KeyValuePair<string, string>> files, Dictionary<string, string> assemblies, ISet<string> dataPaths)
 	{
 		int count = files.Count;
-		CollectSerializedGameFiles(root, files);
+		CollectAllSerializedFiles(root, files);
 		CollectWebFiles(root, files);
 		CollectAssetBundles(root, files);
 		CollectAssembliesSafe(root, assemblies);

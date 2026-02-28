@@ -76,6 +76,12 @@ public sealed class SerializedFile : FileBase
 		return SerializedFileHeader.IsSerializedFileHeader(reader, stream.Length);
 	}
 
+	public static bool IsSerializedFile(string filePath, FileSystem fileSystem)
+	{
+		using Stream stream = fileSystem.File.OpenRead(filePath);
+		return IsSerializedFile(stream);
+	}
+
 	public override string ToString()
 	{
 		return NameFixed;
