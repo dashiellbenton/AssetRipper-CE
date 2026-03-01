@@ -41,6 +41,8 @@ public abstract class Bundle : IDisposable
 	public IReadOnlyList<FailedFile> FailedFiles => failedFiles;
 	private readonly List<FailedFile> failedFiles = [];
 
+	public bool AnyFailed => failedFiles.Count > 0 || bundles.Any(bundle => bundle.AnyFailed);
+
 	private bool disposedValue;
 
 	/// <summary>
