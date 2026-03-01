@@ -124,4 +124,9 @@ public static class GPUPlatformExtensions
 	{
 		return platform is GPUPlatform.D3D9 or GPUPlatform.D3D11 or GPUPlatform.D3D11_9x;
 	}
+
+	public static bool IsOpenGL(this GPUPlatform platform)
+	{
+		return platform is GPUPlatform.OpenGL or GPUPlatform.Gles20 or GPUPlatform.GlesDesktop or GPUPlatform.Gles3x or GPUPlatform.GlCore;
+	}
 }
