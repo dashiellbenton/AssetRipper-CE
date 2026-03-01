@@ -1,5 +1,6 @@
 ﻿using AssetRipper.SourceGenerated.Classes.ClassID_30;
 using AssetRipper.SourceGenerated.NativeEnums.Global;
+using BuildTargetGroup = AssetRipper.SourceGenerated.Enums.BuildTargetGroup;
 using GraphicsTier = AssetRipper.SourceGenerated.Enums.GraphicsTier;
 using RenderingPath = AssetRipper.SourceGenerated.Enums.RenderingPath;
 
@@ -59,7 +60,7 @@ public static class GraphicsSettingsExtensions
 
 	private static BuildTargetGroup GetBuildTargetGroup(this IGraphicsSettings settings)
 	{
-		return settings.Collection.Platform.PlatformToBuildGroup();
+		return BuildTargetGroup.FromBuildTarget(settings.Collection.Platform);
 	}
 
 	/// <summary>
