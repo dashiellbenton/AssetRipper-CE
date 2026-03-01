@@ -134,7 +134,7 @@ public static class Texture2DExtensions
 
 	private static bool IsSwapBytes(IO.Files.BuildTarget platform, TextureFormat format)
 	{
-		if (platform == IO.Files.BuildTarget.XBox360)
+		if (platform == IO.Files.BuildTarget.Xbox360)
 		{
 			switch (format)
 			{

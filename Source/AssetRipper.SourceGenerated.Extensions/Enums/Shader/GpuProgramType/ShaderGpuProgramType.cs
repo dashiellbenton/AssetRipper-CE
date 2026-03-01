@@ -123,33 +123,33 @@ public static class ShaderGpuProgramTypeExtensions
 		switch (_this)
 		{
 			case ShaderGpuProgramType.Unknown:
-				return GPUPlatform.unknown;
+				return GPUPlatform.Unknown;
 
 			case ShaderGpuProgramType.GLES:
-				return GPUPlatform.gles;
+				return GPUPlatform.Gles20;
 
 			case ShaderGpuProgramType.GLES3:
 			case ShaderGpuProgramType.GLES31:
 			case ShaderGpuProgramType.GLES31AEP:
-				return GPUPlatform.gles3;
+				return GPUPlatform.Gles3x;
 
 			case ShaderGpuProgramType.GLCore32:
 			case ShaderGpuProgramType.GLCore41:
 			case ShaderGpuProgramType.GLCore43:
-				return GPUPlatform.glcore;
+				return GPUPlatform.GlCore;
 
 			case ShaderGpuProgramType.GLLegacy:
-				return GPUPlatform.openGL;
+				return GPUPlatform.OpenGL;
 
 			case ShaderGpuProgramType.DX9VertexSM20:
 			case ShaderGpuProgramType.DX9VertexSM30:
 			case ShaderGpuProgramType.DX9PixelSM20:
 			case ShaderGpuProgramType.DX9PixelSM30:
-				return GPUPlatform.d3d9;
+				return GPUPlatform.D3D9;
 
 			case ShaderGpuProgramType.DX10Level9Pixel:
 			case ShaderGpuProgramType.DX10Level9Vertex:
-				return GPUPlatform.d3d11_9x;
+				return GPUPlatform.D3D11_9x;
 
 			case ShaderGpuProgramType.DX11VertexSM40:
 			case ShaderGpuProgramType.DX11VertexSM50:
@@ -159,14 +159,14 @@ public static class ShaderGpuProgramTypeExtensions
 			case ShaderGpuProgramType.DX11GeometrySM50:
 			case ShaderGpuProgramType.DX11HullSM50:
 			case ShaderGpuProgramType.DX11DomainSM50:
-				return GPUPlatform.d3d11;
+				return GPUPlatform.D3D11;
 
 			case ShaderGpuProgramType.MetalVS:
 			case ShaderGpuProgramType.MetalFS:
-				return GPUPlatform.metal;
+				return GPUPlatform.Metal;
 
 			case ShaderGpuProgramType.SPIRV:
-				return GPUPlatform.vulkan;
+				return GPUPlatform.Vulkan;
 
 			case ShaderGpuProgramType.ConsoleVS:
 			case ShaderGpuProgramType.ConsoleFS:
@@ -176,32 +176,32 @@ public static class ShaderGpuProgramTypeExtensions
 				switch (platform)
 				{
 					case BuildTarget.PS3:
-						return GPUPlatform.ps3;
+						return GPUPlatform.PS3;
 					case BuildTarget.PS4:
-						return GPUPlatform.ps4;
+						return GPUPlatform.PS4;
 					case BuildTarget.PSM:
-						return GPUPlatform.psm;
+						return GPUPlatform.PSM;
 					case BuildTarget.PSP2:
-						return GPUPlatform.psp2;
+						return GPUPlatform.Vita;
 
-					case BuildTarget.XBox360:
-						return GPUPlatform.xbox360;
+					case BuildTarget.Xbox360:
+						return GPUPlatform.Xbox360;
 					case BuildTarget.XboxOne:
-						return GPUPlatform.xboxone;
+						return GPUPlatform.XboxOne;
 #warning		 TODO:
 					//return GPUPlatform.xboxone_d3d12;
 
 					case BuildTarget.WiiU:
-						return GPUPlatform.wiiu;
+						return GPUPlatform.WiiU;
 
 					case BuildTarget.N3DS:
-						return GPUPlatform.n3ds;
+						return GPUPlatform.N3DS;
 
 					case BuildTarget.GoogleNaCl:
-						return GPUPlatform.glesdesktop;
+						return GPUPlatform.GlesDesktop;
 
 					case BuildTarget.Flash:
-						return GPUPlatform.flash;
+						return GPUPlatform.Flash;
 
 					case BuildTarget.Switch:
 						return GPUPlatform.Switch;

@@ -7,39 +7,45 @@ public enum BuildTarget : uint
 {
 	ValidPlayer = 1,
 	/// <summary>
-	/// Build a universal macOS standalone
+	/// Universal macOS standalone
 	/// </summary>
 	StandaloneOSXUniversal = 2,
 	/// <summary>
-	/// Build a macOS standalone (PowerPC only)
+	/// macOS standalone (PowerPC only)
 	/// </summary>
 	StandaloneOSXPPC = 3,
 	/// <summary>
-	/// Build a macOS standalone (Intel only)
+	/// macOS standalone (Intel only)
 	/// </summary>
 	StandaloneOSXIntel = 4,
 	/// <summary>
-	/// Build a Windows standalone
+	/// Windows standalone
 	/// </summary>
 	StandaloneWinPlayer = 5,
 	/// <summary>
-	/// Build a web player.
+	/// Web player
 	/// </summary>
 	WebPlayerLZMA = 6,
 	/// <summary>
-	/// Build a streamed web player
+	/// Streamed web player
 	/// </summary>
 	WebPlayerLZMAStreamed = 7,
+	/// <summary>
+	/// Nintendo Wii
+	/// </summary>
 	Wii = 8,
 	/// <summary>
-	/// Build an iOS player
+	/// iOS player
 	/// </summary>
 	iOS = 9,
+	/// <summary>
+	/// PlayStation 3
+	/// </summary>
 	PS3 = 10,
-	XBox360 = 11,
+	Xbox360 = 11,
 	Broadcom = 12,
 	/// <summary>
-	/// Build an Android .apk standalone app
+	/// Android .apk standalone app
 	/// </summary>
 	Android = 13,
 	WinGLESEmu = 14,
@@ -49,12 +55,12 @@ public enum BuildTarget : uint
 	/// </summary>
 	GoogleNaCl = 16,
 	/// <summary>
-	/// Build a Linux standalone
+	/// Linux standalone
 	/// </summary>
 	StandaloneLinux = 17,
 	Flash = 18,
 	/// <summary>
-	/// Build a Windows 64-bit standalone
+	/// Windows 64-bit standalone
 	/// </summary>
 	StandaloneWin64Player = 19,
 	/// <summary>
@@ -62,28 +68,31 @@ public enum BuildTarget : uint
 	/// </summary>
 	WebGL = 20,
 	/// <summary>
-	/// Build an Windows Store Apps player
+	/// Windows Store Apps player
 	/// </summary>
 	MetroPlayerX86 = 21,
 	/// <summary>
-	/// Build an Windows Store Apps player
+	/// Windows Store Apps player
 	/// </summary>
 	MetroPlayerX64 = 22,
 	/// <summary>
-	/// Build an Windows Store Apps player
+	/// Windows Store Apps player
 	/// </summary>
 	MetroPlayerARM = 23,
 	/// <summary>
-	/// Build a Linux 64-bit standalone
+	/// Linux 64-bit standalone
 	/// </summary>
 	StandaloneLinux64 = 24,
 	/// <summary>
-	/// Build a Linux universal standalone
+	/// Linux universal standalone
 	/// </summary>
 	StandaloneLinuxUniversal = 25,
+	/// <summary>
+	/// Windows Phone 8 player
+	/// </summary>
 	WP8Player = 26,
 	/// <summary>
-	/// Build a macOS Intel 64-bit standalone
+	/// macOS Intel 64-bit standalone
 	/// </summary>
 	StandaloneOSXIntel64 = 27,
 	/// <summary>
@@ -91,53 +100,74 @@ public enum BuildTarget : uint
 	/// </summary>
 	BB10 = 28,
 	/// <summary>
-	/// Build a Tizen player
+	/// Tizen player
 	/// </summary>
 	Tizen = 29,
 	/// <summary>
-	/// Build a PS Vita Standalone
+	/// PS Vita Standalone
 	/// </summary>
 	PSP2 = 30,
 	/// <summary>
-	/// Build a PS4 Standalone
+	/// PS4 Standalone
 	/// </summary>
 	PS4 = 31,
+	/// <summary>
+	/// PlayStation Mobile
+	/// </summary>
 	PSM = 32,
 	/// <summary>
-	/// Build a Xbox One Standalone
+	/// Xbox One Standalone
 	/// </summary>
 	XboxOne = 33,
 	/// <summary>
-	/// Build to Samsung Smart TV platform
+	/// Samsung Smart TV
 	/// </summary>
 	SamsungTV = 34,
 	/// <summary>
-	/// Build to Nintendo 3DS platform
+	/// Nintendo 3DS
 	/// </summary>
 	N3DS = 35,
 	/// <summary>
-	/// Build a Wii U standalone
+	/// Wii U standalone
 	/// </summary>
 	WiiU = 36,
 	/// <summary>
-	/// Build to Apple's tvOS platform
+	/// Apple tvOS
 	/// </summary>
 	tvOS = 37,
 	/// <summary>
-	/// Build a Nintendo Switch player
+	/// Nintendo Switch player
 	/// </summary>
 	Switch = 38,
 	Lumin = 39,
+	/// <summary>
+	/// Stadia standalone
+	/// </summary>
 	Stadia = 40,
 	CloudRendering = 41,
+	/// <summary>
+	/// Xbox Series player
+	/// </summary>
 	GameCoreXboxSeries = 42,
+	/// <summary>
+	/// Xbox one player
+	/// </summary>
 	GameCoreXboxOne = 43,
 	/// <summary>
-	/// Build a PS5 Standalone
+	/// PS5 Standalone
 	/// </summary>
 	PS5 = 44,
 	EmbeddedLinux = 45,
 	QNX = 46,
+	/// <summary>
+	/// Apple Vision OS
+	/// </summary>
+	VisionOS = 47,
+	/// <summary>
+	/// Nintendo Switch 2
+	/// </summary>
+	Switch2 = 48,
+	Kepler = 49,
 
 	/// <summary>
 	/// Editor

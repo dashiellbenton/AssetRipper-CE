@@ -118,7 +118,7 @@ public static class BuildTargetGroupExtensions
 			case BuildTarget.PS3:
 				return BuildTargetGroup.PS3;
 
-			case BuildTarget.XBox360:
+			case BuildTarget.Xbox360:
 				return BuildTargetGroup.XBOX360;
 
 			case BuildTarget.Android:
