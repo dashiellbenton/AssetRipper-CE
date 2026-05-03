@@ -14,12 +14,12 @@ jobs:
     strategy:
       matrix:
         config:
-          - { name: win_x64, os: windows-latest, runtime: win-x64, executable: AssetRipper.GUI.PremiumRecreation.exe }
-          - { name: win_arm64, os: windows-latest, runtime: win-arm64, executable: AssetRipper.GUI.PremiumRecreation.exe }
-          - { name: linux_x64, os: ubuntu-22.04, runtime: linux-x64, executable: AssetRipper.GUI.PremiumRecreation }
-          - { name: linux_arm64, os: ubuntu-22.04-arm, runtime: linux-arm64, executable: AssetRipper.GUI.PremiumRecreation }
-          - { name: mac_x64, os: macos-14, runtime: osx-x64, executable: AssetRipper.GUI.PremiumRecreation }
-          - { name: mac_arm64, os: macos-14, runtime: osx-arm64, executable: AssetRipper.GUI.PremiumRecreation }
+          - { name: win_x64, os: windows-latest, runtime: win-x64, executable: AssetRipper.GUI.CE.exe }
+          - { name: win_arm64, os: windows-latest, runtime: win-arm64, executable: AssetRipper.GUI.CE.exe }
+          - { name: linux_x64, os: ubuntu-22.04, runtime: linux-x64, executable: AssetRipper.GUI.CE }
+          - { name: linux_arm64, os: ubuntu-22.04-arm, runtime: linux-arm64, executable: AssetRipper.GUI.CE }
+          - { name: mac_x64, os: macos-14, runtime: osx-x64, executable: AssetRipper.GUI.CE }
+          - { name: mac_arm64, os: macos-14, runtime: osx-arm64, executable: AssetRipper.GUI.CE }
 
     steps:
       - uses: actions/checkout@v6
@@ -30,24 +30,24 @@ jobs:
 
       - name: Publish
         run: dotnet publish -c Release -r ${{ matrix.config.runtime }}
-        working-directory: ./Source/AssetRipper.GUI.PremiumRecreation/
+        working-directory: ./Source/AssetRipper.GUI.CE/
 
       - name: List Files
         shell: bash
-        run: ls -R ./Source/0Bins/AssetRipper.GUI.PremiumRecreation/Release/
+        run: ls -R ./Source/0Bins/AssetRipper.GUI.CE/Release/
 
       - name: List Files
         shell: bash
-        run: date -u > ./Source/0Bins/AssetRipper.GUI.PremiumRecreation/Release/${{ matrix.config.runtime }}/publish/compile_time.txt
+        run: date -u > ./Source/0Bins/AssetRipper.GUI.CE/Release/${{ matrix.config.runtime }}/publish/compile_time.txt
 
       - name: Upload
         uses: actions/upload-artifact@v7
         with:
           name: AssetRipper_${{ matrix.config.name }}
           path: |
-            ./Source/0Bins/AssetRipper.GUI.PremiumRecreation/Release/${{ matrix.config.runtime }}/publish/${{ matrix.config.executable }}
-            ./Source/0Bins/AssetRipper.GUI.PremiumRecreation/Release/${{ matrix.config.runtime }}/publish/*.dll
-            ./Source/0Bins/AssetRipper.GUI.PremiumRecreation/Release/${{ matrix.config.runtime }}/publish/*.so
-            ./Source/0Bins/AssetRipper.GUI.PremiumRecreation/Release/${{ matrix.config.runtime }}/publish/*.dylib
-            ./Source/0Bins/AssetRipper.GUI.PremiumRecreation/Release/${{ matrix.config.runtime }}/publish/compile_time.txt
+            ./Source/0Bins/AssetRipper.GUI.CE/Release/${{ matrix.config.runtime }}/publish/${{ matrix.config.executable }}
+            ./Source/0Bins/AssetRipper.GUI.CE/Release/${{ matrix.config.runtime }}/publish/*.dll
+            ./Source/0Bins/AssetRipper.GUI.CE/Release/${{ matrix.config.runtime }}/publish/*.so
+            ./Source/0Bins/AssetRipper.GUI.CE/Release/${{ matrix.config.runtime }}/publish/*.dylib
+            ./Source/0Bins/AssetRipper.GUI.CE/Release/${{ matrix.config.runtime }}/publish/compile_time.txt
           if-no-files-found: error
