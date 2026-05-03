@@ -1,6 +1,6 @@
-# AssetRipper Premium Recreation
+# AssetRipper Community Edition
 
-This is just a **semi-vibe coded** community edition for the Unity decompiler (AssetRipper](https://assetripper.github.io/AssetRipper/index.html)
+This is just a **semi-vibe coded** community edition for the Unity decompiler [AssetRipper](https://assetripper.github.io/AssetRipper/index.html)
 Currently has:
 - Shader decomp (experimental)
 
