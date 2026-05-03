@@ -1,4 +1,8 @@
-# AssetRipper
+# AssetRipper Premium Recreation
+
+This is just a **vibe coded** recreation of AssetRipper's premium features (listed [here](https://assetripper.github.io/AssetRipper/articles/PremiumFeatures.html))
+
+# Original README
 
 [![](https://img.shields.io/github/downloads/AssetRipper/AssetRipper/total.svg)](https://github.com/AssetRipper/AssetRipper/releases)
 [![](https://img.shields.io/github/downloads/AssetRipper/AssetRipper/latest/total.svg)](https://github.com/AssetRipper/AssetRipper/releases/latest)
