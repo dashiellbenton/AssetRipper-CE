@@ -1,4 +1,4 @@
-﻿using AssetRipper.IO.Files;
+using AssetRipper.IO.Files;
 using System.Diagnostics;
 using System.Globalization;
 using System.Runtime.InteropServices;
@@ -200,7 +200,7 @@ public static partial class AssetRipperRuntimeInformation
 		}
 	}
 
-	private static bool TryGetSystemMemory(out long totalMemoryInKilobytes)
+	public static bool TryGetSystemMemory(out long totalMemoryInKilobytes)
 	{
 		if (OperatingSystem.IsWindows())
 		{

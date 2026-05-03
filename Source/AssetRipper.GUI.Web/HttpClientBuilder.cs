@@ -7,7 +7,7 @@ internal static class HttpClientBuilder
 {
 	internal static HttpClient CreateHttpClient()
 	{
-		string productName = GameFileLoader.Premium ? "AssetRipper.GUI.Premium" : "AssetRipper.GUI.PremiumRecreation";
+		string productName = GameFileLoader.Premium ? "AssetRipper.GUI.Premium" : "AssetRipper.GUI.CE";
 
 		HttpClient client = new();
 		client.DefaultRequestHeaders.UserAgent.Add(new(productName, Build.Version));

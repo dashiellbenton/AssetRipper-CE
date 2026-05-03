@@ -6,7 +6,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m'
 
-echo -e "${GREEN}=== AssetRipper Premium Recreation - Linux Build Script ===${NC}"
+echo -e "${GREEN}=== AssetRipper CE - Linux Build Script ===${NC}"
 
 # Check if running on Linux
 if [[ "$(uname -s)" != "Linux" ]]; then
@@ -59,15 +59,15 @@ dotnet restore AssetRipper.slnx
 
 # Build for Linux x64
 echo -e "${GREEN}=== Building for Linux x64 ===${NC}"
-dotnet publish Source/AssetRipper.GUI.PremiumRecreation/AssetRipper.GUI.PremiumRecreation.csproj \
+dotnet publish Source/AssetRipper.GUI.CE/AssetRipper.GUI.CE.csproj \
     -c Release -r linux-x64 --self-contained true /p:PublishSingleFile=true /p:PublishTrimmed=false
 
 echo -e "${GREEN}=== Linux x64 Build Complete! ===${NC}"
-rm -f Source/0Bins/AssetRipper.GUI.PremiumRecreation/Release/linux-x64/publish/{appsettings*.json,*.staticwebassets.endpoints.json}
+rm -f Source/0Bins/AssetRipper.GUI.CE/Release/linux-x64/publish/{appsettings*.json,*.staticwebassets.endpoints.json}
 mkdir -p Dist/AssetRipper_linux-x64
-cp -r Source/0Bins/AssetRipper.GUI.PremiumRecreation/Release/linux-x64/publish/* Dist/AssetRipper_linux-x64/
+cp -r Source/0Bins/AssetRipper.GUI.CE/Release/linux-x64/publish/* Dist/AssetRipper_linux-x64/
 date -u > Dist/AssetRipper_linux-x64/compile_time.txt
-chmod +x Dist/AssetRipper_linux-x64/AssetRipper.GUI.PremiumRecreation
+chmod +x Dist/AssetRipper_linux-x64/AssetRipper.GUI.CE
 
-echo -e "${GREEN}Binary: Dist/AssetRipper_linux-x64/AssetRipper.GUI.PremiumRecreation${NC}"
+echo -e "${GREEN}Binary: Dist/AssetRipper_linux-x64/AssetRipper.GUI.CE${NC}"
 ls -lh Dist/AssetRipper_linux-x64/

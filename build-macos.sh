@@ -6,7 +6,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m'
 
-echo -e "${GREEN}=== AssetRipper Premium Recreation - macOS Build Script ===${NC}"
+echo -e "${GREEN}=== AssetRipper CE - macOS Build Script ===${NC}"
 
 # Check if running on macOS
 if [[ "$(uname -s)" != "Darwin" ]]; then
@@ -58,15 +58,15 @@ fi
 
 # Build for detected architecture
 echo -e "${GREEN}=== Building for macOS ($RUNTIME) ===${NC}"
-dotnet publish Source/AssetRipper.GUI.PremiumRecreation/AssetRipper.GUI.PremiumRecreation.csproj \
+dotnet publish Source/AssetRipper.GUI.CE/AssetRipper.GUI.CE.csproj \
     -c Release -r $RUNTIME --self-contained true /p:PublishSingleFile=true /p:PublishTrimmed=false
 
 echo -e "${GREEN}=== macOS ($RUNTIME) build complete! ===${NC}"
-rm -f Source/0Bins/AssetRipper.GUI.PremiumRecreation/Release/$RUNTIME/publish/{appsettings*.json,*.staticwebassets.endpoints.json}
+rm -f Source/0Bins/AssetRipper.GUI.CE/Release/$RUNTIME/publish/{appsettings*.json,*.staticwebassets.endpoints.json}
 mkdir -p Dist/AssetRipper_$RUNTIME
-cp -r Source/0Bins/AssetRipper.GUI.PremiumRecreation/Release/$RUNTIME/publish/* Dist/AssetRipper_$RUNTIME/
+cp -r Source/0Bins/AssetRipper.GUI.CE/Release/$RUNTIME/publish/* Dist/AssetRipper_$RUNTIME/
 date -u > Dist/AssetRipper_$RUNTIME/compile_time.txt
-chmod +x Dist/AssetRipper_$RUNTIME/AssetRipper.GUI.PremiumRecreation
+chmod +x Dist/AssetRipper_$RUNTIME/AssetRipper.GUI.CE
 
-echo -e "${GREEN}Binary: Dist/AssetRipper_$RUNTIME/AssetRipper.GUI.PremiumRecreation${NC}"
+echo -e "${GREEN}Binary: Dist/AssetRipper_$RUNTIME/AssetRipper.GUI.CE${NC}"
 ls -lh Dist/AssetRipper_$RUNTIME/

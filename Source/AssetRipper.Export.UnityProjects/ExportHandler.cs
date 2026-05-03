@@ -1,4 +1,4 @@
-﻿using AssetRipper.Assets.Bundles;
+using AssetRipper.Assets.Bundles;
 using AssetRipper.Export.Configuration;
 using AssetRipper.Export.UnityProjects.PathIdMapping;
 using AssetRipper.Export.UnityProjects.Project;
@@ -81,6 +81,7 @@ public class ExportHandler
 		// Asset processors
 		yield return new SceneDefinitionProcessor();
 		yield return new OriginalPathProcessor(Settings.ProcessingSettings.BundledAssetsExportMode);
+		yield return new AssetPathOverrideProcessor(Settings.AssetPathOverrides);
 		yield return new MainAssetProcessor();
 		yield return new AnimatorControllerProcessor();
 		yield return new AudioMixerProcessor();
@@ -94,6 +95,19 @@ public class ExportHandler
 
 	public void Export(GameData gameData, string outputPath, FileSystem fileSystem)
 	{
+		// Memory limiting: ensure at least 2GB (or 25% of total) remains free
+		if (AssetRipper.Import.AssetRipperRuntimeInformation.TryGetSystemMemory(out long totalMemoryKb))
+		{
+			long totalMemoryBytes = totalMemoryKb * 1024;
+			long reservedBytes = Math.Max(2L * 1024 * 1024 * 1024, totalMemoryBytes / 4); // 2GB or 25% of total
+			long usedBytes = GC.GetTotalMemory(false);
+			long availableBytes = totalMemoryBytes - usedBytes;
+			if (availableBytes < reservedBytes)
+			{
+				throw new InvalidOperationException($"Insufficient memory for export. Available: {availableBytes / (1024 * 1024)} MB, need at least {reservedBytes / (1024 * 1024)} MB free.");
+			}
+		}
+
 		Logger.Info(LogCategory.Export, "Starting export");
 		Logger.Info(LogCategory.Export, $"Attempting to export assets to {outputPath}...");
 		Logger.Info(LogCategory.Export, $"Game files have these Unity versions: {GetListOfVersions(gameData.GameBundle)}");

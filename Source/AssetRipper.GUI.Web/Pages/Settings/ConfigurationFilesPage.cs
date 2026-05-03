@@ -1,4 +1,5 @@
-﻿using AssetRipper.Configuration;
+using AssetRipper.Configuration;
+using AssetRipper.Import.Configuration;
 using AssetRipper.NativeDialogs;
 using AssetRipper.SourceGenerated.Extensions;
 using Microsoft.AspNetCore.Http;
@@ -15,7 +16,7 @@ public sealed partial class ConfigurationFilesPage : DefaultPage
 	{
 		new H1(writer).Close(GetTitle());
 
-		ReadOnlySpan<HtmlTab> tabs = [SingletonsTab.Instance, ListsTab.Instance];
+		ReadOnlySpan<HtmlTab> tabs = [SingletonsTab.Instance, ListsTab.Instance, AssetPathOverridesTab.Instance];
 		HtmlTab.WriteNavigation(writer, tabs);
 		HtmlTab.WriteContent(writer, tabs);
 	}
@@ -128,5 +129,31 @@ public sealed partial class ConfigurationFilesPage : DefaultPage
 		}
 
 		await Results.Redirect("/ConfigurationFiles").ExecuteAsync(context);
+	}
+
+	public static async Task HandleAssetPathOverridesAddPostRequest(HttpContext context)
+	{
+		string? content = null;
+		if (!context.Request.Form.TryGetString("Content", out content))
+		{
+			string? path = await OpenFileDialog.OpenFile();
+			if (!string.IsNullOrEmpty(path))
+			{
+				content = File.ReadAllText(path);
+			}
+		}
+
+		if (content is not null)
+		{
+			GameFileLoader.Settings.SingletonData.GetOrAdd(nameof(AssetPathOverrideList)).Text = content;
+		}
+
+		await Results.Redirect("/ConfigurationFiles").ExecuteAsync(context);
+	}
+
+	public static Task HandleAssetPathOverridesRemovePostRequest(HttpContext context)
+	{
+		GameFileLoader.Settings.SingletonData[nameof(AssetPathOverrideList)]?.Clear();
+		return Results.Redirect("/ConfigurationFiles").ExecuteAsync(context);
 	}
 }

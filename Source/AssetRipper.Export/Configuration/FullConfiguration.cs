@@ -1,4 +1,4 @@
-﻿using AssetRipper.Configuration;
+using AssetRipper.Configuration;
 using AssetRipper.Export.UnityProjects.Configuration;
 using AssetRipper.Import.Configuration;
 using AssetRipper.Mining.PredefinedAssets;
@@ -28,11 +28,18 @@ public class FullConfiguration : CoreConfiguration
 		set => ExportSettings.LanguageCode = value;
 	}
 
+	public AssetPathOverrideList AssetPathOverrides
+	{
+		get => SingletonData.GetStoredValue<AssetPathOverrideList>(nameof(AssetPathOverrideList)) ?? [];
+		set => SingletonData.SetStoredValue(nameof(AssetPathOverrideList), value);
+	}
+
 	public FullConfiguration()
 	{
 		SingletonData.Add(nameof(ProcessingSettings), new JsonDataInstance<ProcessingSettings>(SerializedSettingsContext.Default.ProcessingSettings));
 		SingletonData.Add(nameof(ExportSettings), new JsonDataInstance<ExportSettings>(SerializedSettingsContext.Default.ExportSettings));
-		SingletonData.Add(nameof(EngineResourceData), new JsonDataInstance<EngineResourceData?>(EngineResourceDataContext.Default.NullableEngineResourceData));
+		SingletonData.Add(nameof(EngineResourceData), new JsonDataInstance<AssetRipper.Mining.PredefinedAssets.EngineResourceData?>(EngineResourceDataContext.Default.NullableEngineResourceData));
+		SingletonData.Add(nameof(AssetPathOverrideList), new JsonDataInstance<AssetPathOverrideList>(AssetPathOverrideListContext.Default.AssetPathOverrideList));
 	}
 
 	public override void LogConfigurationValues()

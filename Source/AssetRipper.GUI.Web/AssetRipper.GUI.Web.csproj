@@ -10,6 +10,7 @@
 		<ProjectReference Include="..\AssetRipper.Export.UnityProjects\AssetRipper.Export.UnityProjects.csproj" />
 		<ProjectReference Include="..\AssetRipper.GUI.Licensing\AssetRipper.GUI.Licensing.csproj" />
 		<ProjectReference Include="..\AssetRipper.GUI.Localizations\AssetRipper.GUI.Localizations.csproj" />
+		<ProjectReference Include="..\AssetRipper.Import\AssetRipper.Import.csproj" />
 		<ProjectReference Include="..\AssetRipper.Web\AssetRipper.Web.csproj" />
 	</ItemGroup>
 

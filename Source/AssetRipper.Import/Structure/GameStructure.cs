@@ -1,4 +1,4 @@
-﻿using AssetRipper.Assets.Bundles;
+using AssetRipper.Assets.Bundles;
 using AssetRipper.Import.AssetCreation;
 using AssetRipper.Import.Configuration;
 using AssetRipper.Import.Logging;
@@ -55,6 +55,19 @@ public sealed class GameStructure : IDisposable
 		if (toProcess.Count == 0)
 		{
 			throw new ArgumentException("Game files not found", nameof(paths));
+		}
+
+		// Memory limiting: ensure at least 2GB (or 25% of total) remains free
+		if (AssetRipperRuntimeInformation.TryGetSystemMemory(out long totalMemoryKb))
+		{
+			long totalMemoryBytes = totalMemoryKb * 1024;
+			long reservedBytes = Math.Max(2L * 1024 * 1024 * 1024, totalMemoryBytes / 4); // 2GB or 25% of total
+			long usedBytes = GC.GetTotalMemory(false);
+			long availableBytes = totalMemoryBytes - usedBytes;
+			if (availableBytes < reservedBytes)
+			{
+				throw new InvalidOperationException($"Insufficient memory. Available: {availableBytes / (1024 * 1024)} MB, need at least {reservedBytes / (1024 * 1024)} MB free.");
+			}
 		}
 
 		return new GameStructure(toProcess, fileSystem, configuration);

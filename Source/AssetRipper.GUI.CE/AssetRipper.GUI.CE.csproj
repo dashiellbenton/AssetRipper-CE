@@ -6,8 +6,8 @@
 		<PublishAot>false</PublishAot>
 		<CETCompat>false</CETCompat>
 		<TrimmerSingleWarn>false</TrimmerSingleWarn>
-		<OutputPath>..\0Bins\AssetRipper.GUI.PremiumRecreation\$(Configuration)\</OutputPath>
-		<IntermediateOutputPath>..\0Bins\obj\AssetRipper.GUI.PremiumRecreation\$(Configuration)\</IntermediateOutputPath>
+		<OutputPath>..\0Bins\AssetRipper.GUI.CE\$(Configuration)\</OutputPath>
+		<IntermediateOutputPath>..\0Bins\obj\AssetRipper.GUI.CE\$(Configuration)\</IntermediateOutputPath>
 	</PropertyGroup>
 
 	<PropertyGroup>

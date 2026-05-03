@@ -6,7 +6,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m'
 
-echo -e "${GREEN}=== AssetRipper Premium Recreation - Windows Build Script (Linux Host) ===${NC}"
+echo -e "${GREEN}=== AssetRipper CE - Windows Build Script (Linux Host) ===${NC}"
 
 # Check if running on Linux (cross-compile from Linux to Windows)
 if [[ "$(uname -s)" != "Linux" ]]; then
@@ -43,27 +43,27 @@ dotnet restore AssetRipper.slnx
 
 # Build for Windows x64
 echo -e "${GREEN}=== Building for Windows x64 ===${NC}"
-dotnet publish Source/AssetRipper.GUI.PremiumRecreation/AssetRipper.GUI.PremiumRecreation.csproj \
+dotnet publish Source/AssetRipper.GUI.CE/AssetRipper.GUI.CE.csproj \
     -c Release -r win-x64 --self-contained true /p:PublishSingleFile=true /p:PublishTrimmed=false
 
 echo -e "${GREEN}Windows x64 build complete!${NC}"
-rm -f Source/0Bins/AssetRipper.GUI.PremiumRecreation/Release/win-x64/publish/{appsettings*.json,*.staticwebassets.endpoints.json,web.config}
+rm -f Source/0Bins/AssetRipper.GUI.CE/Release/win-x64/publish/{appsettings*.json,*.staticwebassets.endpoints.json,web.config}
 mkdir -p Dist/AssetRipper_win-x64
-cp -r Source/0Bins/AssetRipper.GUI.PremiumRecreation/Release/win-x64/publish/* Dist/AssetRipper_win-x64/
+cp -r Source/0Bins/AssetRipper.GUI.CE/Release/win-x64/publish/* Dist/AssetRipper_win-x64/
 date -u > Dist/AssetRipper_win-x64/compile_time.txt
-ls -lh Dist/AssetRipper_win-x64/AssetRipper.GUI.PremiumRecreation.exe
+ls -lh Dist/AssetRipper_win-x64/AssetRipper.GUI.CE.exe
 
 # Build for Windows ARM64
 echo -e "${GREEN}=== Building for Windows ARM64 ===${NC}"
-dotnet publish Source/AssetRipper.GUI.PremiumRecreation/AssetRipper.GUI.PremiumRecreation.csproj \
+dotnet publish Source/AssetRipper.GUI.CE/AssetRipper.GUI.CE.csproj \
     -c Release -r win-arm64 --self-contained true /p:PublishSingleFile=true /p:PublishTrimmed=false /p:DebugType=None /p:DebugSymbols=false
 
 echo -e "${GREEN}Windows ARM64 build complete!${NC}"
-rm -f Source/0Bins/AssetRipper.GUI.PremiumRecreation/Release/win-arm64/publish/{appsettings*.json,*.staticwebassets.endpoints.json,web.config}
+rm -f Source/0Bins/AssetRipper.GUI.CE/Release/win-arm64/publish/{appsettings*.json,*.staticwebassets.endpoints.json,web.config}
 mkdir -p Dist/AssetRipper_win-arm64
-cp -r Source/0Bins/AssetRipper.GUI.PremiumRecreation/Release/win-arm64/publish/* Dist/AssetRipper_win-arm64/
+cp -r Source/0Bins/AssetRipper.GUI.CE/Release/win-arm64/publish/* Dist/AssetRipper_win-arm64/
 date -u > Dist/AssetRipper_win-arm64/compile_time.txt
-ls -lh Dist/AssetRipper_win-arm64/AssetRipper.GUI.PremiumRecreation.exe
+ls -lh Dist/AssetRipper_win-arm64/AssetRipper.GUI.CE.exe
 
 echo -e "${GREEN}=== All Windows builds complete! ===${NC}"
 echo -e "${GREEN}Output directory: Dist/${NC}"
