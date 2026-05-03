@@ -1,4 +1,4 @@
-﻿using AssetRipper.Export.Configuration;
+using AssetRipper.Export.Configuration;
 
 namespace AssetRipper.GUI.Web.Pages.Settings.DropDown;
 
@@ -20,9 +20,7 @@ public sealed class ShaderExportModeDropDownSetting : DropDownSetting<ShaderExpo
 	{
 		ShaderExportMode.Dummy => Localization.ShaderAssetFormatDummyDescription,
 		ShaderExportMode.Yaml => Localization.ShaderAssetFormatYamlDescription,
-		ShaderExportMode.Decompile => GameFileLoader.Premium
-			? Localization.ShaderAssetFormatDecompileDescription
-			: Localization.NotAvailableInTheFreeEdition,
+		ShaderExportMode.Decompile => Localization.ShaderAssetFormatDecompileDescription,
 		_ => base.GetDescription(value),
 	};
 }

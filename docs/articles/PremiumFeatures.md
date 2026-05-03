@@ -12,6 +12,8 @@ From a quick glance, the success rate seems to be currently between 10 and 20 pe
 
 This is an experimental shader decompiler that strives to support all variants and preserve perfect semantics. However, it's not yet polished, so expect it to throw errors while ripping some shaders and for there to be compilation errors in Unity Editor. Please report any issues on [GitHub](https://github.com/AssetRipper/AssetRipper/issues).
 
+**Note:** Shader decompilation is now available in the free version of AssetRipper Premium Recreation. Select "Decompile" in the Shader Export Mode setting.
+
 **Platform Support:**
 
 * Vulkan shaders can be decompiled on any platform.
