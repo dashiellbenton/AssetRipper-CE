@@ -39,7 +39,7 @@ This guide will help you run AssetRipper on macOS. Before proceeding, ensure you
 
 1. In the Terminal, enter the following command:
 ```
-./AssetRipper.GUI.Free
+./AssetRipper.GUI.PremiumRecreation
 ```
 2. You may encounter a "Permission denied" error.
 
@@ -47,11 +47,11 @@ This guide will help you run AssetRipper on macOS. Before proceeding, ensure you
 
 3. To fix this, enter the following command:
 ```
-chmod +x AssetRipper.GUI.Free
+chmod +x AssetRipper.GUI.PremiumRecreation
 ```
 4. Now, try running AssetRipper again:
 ```
-./AssetRipper.GUI.Free
+./AssetRipper.GUI.PremiumRecreation
 ```
 
 ### Step 5: Handle Security Prompts
@@ -66,7 +66,7 @@ chmod +x AssetRipper.GUI.Free
 
 ![Allow AssetRipper](images/RunningOnMac/013.png)
 
-5. Run the `./AssetRipper.GUI.Free` command again in Terminal.
+5. Run the `./AssetRipper.GUI.PremiumRecreation` command again in Terminal.
 6. Click "Open" when prompted.
 
 ![Open AssetRipper](images/RunningOnMac/014.png)
@@ -87,7 +87,7 @@ After completing these steps, the AssetRipper GUI should open:
 Once you've gone through the initial setup, you can easily reopen AssetRipper:
 
 1. Navigate to the `AssetRipper_mac_arm64` folder.
-2. Double-click the `AssetRipper.GUI.Free` file to launch the application.
+2. Double-click the `AssetRipper.GUI.PremiumRecreation` file to launch the application.
 
 ![Reopen AssetRipper](images/RunningOnMac/018.png)
 

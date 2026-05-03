@@ -1,13 +1,13 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	<PropertyGroup>
 		<ServerGarbageCollection>true</ServerGarbageCollection>
 		<OptimizationPreference>Size</OptimizationPreference>
-		<PublishAot>true</PublishAot>
+		<PublishAot>false</PublishAot>
 		<CETCompat>false</CETCompat>
 		<TrimmerSingleWarn>false</TrimmerSingleWarn>
-		<OutputPath>..\0Bins\AssetRipper.GUI.Free\$(Configuration)\</OutputPath>
-		<IntermediateOutputPath>..\0Bins\obj\AssetRipper.GUI.Free\$(Configuration)\</IntermediateOutputPath>
+		<OutputPath>..\0Bins\AssetRipper.GUI.PremiumRecreation\$(Configuration)\</OutputPath>
+		<IntermediateOutputPath>..\0Bins\obj\AssetRipper.GUI.PremiumRecreation\$(Configuration)\</IntermediateOutputPath>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -23,6 +23,8 @@
 
 	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
 		<DebuggerSupport>false</DebuggerSupport>
+		<DebugType>None</DebugType>
+		<DebugSymbols>false</DebugSymbols>
 	</PropertyGroup>
 
 	<ItemGroup>

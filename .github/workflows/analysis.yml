@@ -30,17 +30,17 @@ jobs:
 
       - name: Publish
         run: dotnet publish -c Release -r linux-x64 "/p:IlcGenerateMstatFile=true;IlcGenerateDgmlFile=true"
-        working-directory: ./Source/AssetRipper.GUI.Free/
+        working-directory: ./Source/AssetRipper.GUI.PremiumRecreation/
 
       - name: List Files
         shell: bash
-        run: ls -R ./Source/0Bins/obj/AssetRipper.GUI.Free/Release/
+        run: ls -R ./Source/0Bins/obj/AssetRipper.GUI.PremiumRecreation/Release/
 
       - name: Upload
         uses: actions/upload-artifact@v7
         with:
           name: Analysis
           path: |
-            ./Source/0Bins/obj/AssetRipper.GUI.Free/Release/linux-x64/native/*.dgml.xml
-            ./Source/0Bins/obj/AssetRipper.GUI.Free/Release/linux-x64/native/*.mstat
+            ./Source/0Bins/obj/AssetRipper.GUI.PremiumRecreation/Release/linux-x64/native/*.dgml.xml
+            ./Source/0Bins/obj/AssetRipper.GUI.PremiumRecreation/Release/linux-x64/native/*.mstat
           if-no-files-found: error
