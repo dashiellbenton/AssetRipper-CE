@@ -1,6 +1,8 @@
 # AssetRipper Premium Recreation
 
 This is just a **vibe coded** recreation of AssetRipper's premium features (listed [here](https://assetripper.github.io/AssetRipper/articles/PremiumFeatures.html))
+Currently has:
+- Shader decomp (experimental)
 
 # Original README
 
